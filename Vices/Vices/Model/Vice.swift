@@ -8,10 +8,10 @@
 import Foundation
 
 struct Vice: Hashable, Codable {
-    let name: String
-    let quittingDate: Date
+    var name: String
+    var quittingDate: Date
     /// may end up adding this.. reminds you when you come back
-    let reason: String?
+    var reason: String?
 
     init(name: String, quittingDate: Date = .todayMonthDayYear(), reason: String? = nil) {
         self.name = name

@@ -43,37 +43,31 @@
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="102"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="v97-yu-OHH">
-                                                    <rect key="frame" x="20" y="20" width="334" height="62"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nicotine" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wcp-t6-Tkr">
-                                                            <rect key="frame" x="0.0" y="22.5" width="56" height="17"/>
-                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X days" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JoP-f2-44I">
-                                                            <rect key="frame" x="64" y="22.5" width="43.5" height="17"/>
-                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="thc-AZ-Wyi">
-                                                            <rect key="frame" x="115.5" y="0.0" width="218.5" height="62"/>
-                                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                        </view>
-                                                    </subviews>
-                                                </stackView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wcp-t6-Tkr">
+                                                    <rect key="frame" x="20" y="20" width="282.5" height="17"/>
+                                                    <string key="text">Nicotine Nicotine Nicotine Nicotine Nicotine Nicotine Nicotine Nicotine Nicotine Nicotine Nicotine Nicotine Nicotine Nicotine Nicotine Nicotine Nicotine Nicotine Nicotine Nicotine</string>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="X days" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JoP-f2-44I">
+                                                    <rect key="frame" x="310.5" y="20" width="43.5" height="17"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="v97-yu-OHH" firstAttribute="top" secondItem="BVl-1Y-qse" secondAttribute="top" constant="20" id="Ebi-C5-XFx"/>
-                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="v97-yu-OHH" secondAttribute="bottom" priority="999" constant="20" id="Gq1-Ok-4B7"/>
-                                                <constraint firstItem="v97-yu-OHH" firstAttribute="trailing" secondItem="BVl-1Y-qse" secondAttribute="trailingMargin" id="cSh-EO-PDY"/>
-                                                <constraint firstItem="v97-yu-OHH" firstAttribute="leading" secondItem="BVl-1Y-qse" secondAttribute="leadingMargin" id="nnE-cB-klN"/>
+                                                <constraint firstItem="JoP-f2-44I" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Wcp-t6-Tkr" secondAttribute="trailing" constant="8" id="9UO-Sg-b34"/>
+                                                <constraint firstItem="JoP-f2-44I" firstAttribute="top" secondItem="BVl-1Y-qse" secondAttribute="top" constant="20" id="IyD-uH-SM6"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="JoP-f2-44I" secondAttribute="bottom" priority="998" constant="20" id="WEk-3p-hKk"/>
+                                                <constraint firstAttribute="trailing" secondItem="JoP-f2-44I" secondAttribute="trailing" constant="20" id="Xu1-It-s60"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Wcp-t6-Tkr" secondAttribute="bottom" priority="999" constant="20" id="bha-83-hi2"/>
+                                                <constraint firstItem="Wcp-t6-Tkr" firstAttribute="leading" secondItem="BVl-1Y-qse" secondAttribute="leading" constant="20" id="qp2-WP-QEU"/>
+                                                <constraint firstItem="Wcp-t6-Tkr" firstAttribute="top" secondItem="BVl-1Y-qse" secondAttribute="top" constant="20" id="ySo-Fi-CGs"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="containerStackView" destination="v97-yu-OHH" id="Q5v-ol-vbk"/>
                                             <outlet property="nameLabel" destination="Wcp-t6-Tkr" id="nGs-M7-PrU"/>
                                             <outlet property="timeLabel" destination="JoP-f2-44I" id="9gO-RO-mfH"/>
                                         </connections>
