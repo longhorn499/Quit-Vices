@@ -24,7 +24,7 @@
             </objects>
             <point key="canvasLocation" x="-829" y="116"/>
         </scene>
-        <!--Vices-->
+        <!--Quit Vices-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="VicesViewController" customModule="Vices" customModuleProvider="target" sceneMemberID="viewController">
@@ -84,7 +84,7 @@
                             <constraint firstItem="fhy-WX-dPP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="sUv-l0-JlG"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Vices" id="iFV-XI-0gg">
+                    <navigationItem key="navigationItem" title="Quit Vices" id="iFV-XI-0gg">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Nfn-YW-jY8">
                             <color key="tintColor" systemColor="systemPurpleColor"/>
                             <connections>
