@@ -7,6 +7,7 @@
 
 import UIKit
 
+// NEXT UP!
 // TODO: Fix background color of nav bar going under table (that works w/ dark and light)
 // TODO: Fix cell layout with large text (days and name should expand.., or put it back in the stackView and change from vert to horizontal)
 class VicesViewController: UIViewController {
@@ -126,25 +127,6 @@ extension VicesViewController: UITableViewDelegate {
         editingIndex = indexPath
         presentSaveVice(vice: models[indexPath.row])
     }
-
-    func tableView(_ tableView: UITableView, canFocusRowAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-
-    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        let r = models.remove(at: sourceIndexPath.row)
-        models.insert(r, at: destinationIndexPath.row)
-    }
-}
-
-// MARK: - UITableViewDropDelegate
-
-extension VicesViewController: UITableViewDropDelegate {
-    func tableView(_ tableView: UITableView, dropSessionDidUpdate session: UIDropSession, withDestinationIndexPath destinationIndexPath: IndexPath?) -> UITableViewDropProposal {
-        return .init(operation: .move, intent: .insertAtDestinationIndexPath)
-    }
-
-    func tableView(_ tableView: UITableView, performDropWith coordinator: UITableViewDropCoordinator) { }
 }
 
 // MARK: CreateViceViewControllerDelegate
