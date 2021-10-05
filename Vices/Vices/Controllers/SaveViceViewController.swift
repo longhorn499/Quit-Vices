@@ -13,7 +13,6 @@ protocol CreateViceViewControllerDelegate: AnyObject {
 
 }
 
-// TODO: Wrap in scrollview
 // TODO: simple keyboard dismissing from textField
 class SaveViceViewController: UIViewController {
 

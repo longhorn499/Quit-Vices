@@ -120,16 +120,7 @@ extension VicesViewController: UITableViewDelegate {
             completion(true)
         }
         reset.backgroundColor = .systemIndigo
-        let edit = UIContextualAction(
-            style: .normal,
-            title: "Edit"
-        ) {  (_, _, completion) in
-            self.editingIndex = indexPath
-            self.presentSaveVice(vice: self.models[indexPath.row])
-            completion(true)
-        }
-        edit.backgroundColor = .systemPurple
-        return UISwipeActionsConfiguration(actions: [delete, reset, edit])
+        return UISwipeActionsConfiguration(actions: [delete, reset])
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
