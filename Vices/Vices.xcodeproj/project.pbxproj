@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		52BB824E270BCCFF00F261DB /* CreateViceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BB824D270BCCFF00F261DB /* CreateViceViewController.swift */; };
+		52BB824E270BCCFF00F261DB /* SaveViceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BB824D270BCCFF00F261DB /* SaveViceViewController.swift */; };
 		52BB8251270BD11C00F261DB /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BB8250270BD11C00F261DB /* Cache.swift */; };
 		52BB8254270BD26200F261DB /* Vice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BB8253270BD26200F261DB /* Vice.swift */; };
 		52BB8258270BDA7400F261DB /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BB8257270BDA7300F261DB /* UIFont+Extensions.swift */; };
@@ -41,7 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		52BB824D270BCCFF00F261DB /* CreateViceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViceViewController.swift; sourceTree = "<group>"; };
+		52BB824D270BCCFF00F261DB /* SaveViceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveViceViewController.swift; sourceTree = "<group>"; };
 		52BB8250270BD11C00F261DB /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		52BB8253270BD26200F261DB /* Vice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vice.swift; sourceTree = "<group>"; };
 		52BB8257270BDA7300F261DB /* UIFont+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Extensions.swift"; sourceTree = "<group>"; };
@@ -110,6 +110,19 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		52BB8259270BE20C00F261DB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				52C17B6D270B9AB200562893 /* Assets.xcassets */,
+				52C17B64270B9AB100562893 /* AppDelegate.swift */,
+				52C17B6A270B9AB100562893 /* Main.storyboard */,
+				52C17B6F270B9AB200562893 /* LaunchScreen.storyboard */,
+				52C17B72270B9AB200562893 /* Info.plist */,
+				52C17B66270B9AB100562893 /* SceneDelegate.swift */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		52C17B58270B9AB100562893 = {
 			isa = PBXGroup;
 			children = (
@@ -133,15 +146,10 @@
 		52C17B63270B9AB100562893 /* Vices */ = {
 			isa = PBXGroup;
 			children = (
-				52C17B64270B9AB100562893 /* AppDelegate.swift */,
-				52C17B6D270B9AB200562893 /* Assets.xcassets */,
 				52C17B94270B9AD000562893 /* Controllers */,
 				52BB8256270BDA6500F261DB /* Extensions */,
-				52C17B72270B9AB200562893 /* Info.plist */,
-				52C17B6F270B9AB200562893 /* LaunchScreen.storyboard */,
-				52C17B6A270B9AB100562893 /* Main.storyboard */,
 				52BB8252270BD25A00F261DB /* Model */,
-				52C17B66270B9AB100562893 /* SceneDelegate.swift */,
+				52BB8259270BE20C00F261DB /* Supporting Files */,
 				52BB824F270BD11300F261DB /* Utility */,
 				52C17B95270B9B4200562893 /* Views */,
 			);
@@ -168,7 +176,7 @@
 		52C17B94270B9AD000562893 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				52BB824D270BCCFF00F261DB /* CreateViceViewController.swift */,
+				52BB824D270BCCFF00F261DB /* SaveViceViewController.swift */,
 				52C17B68270B9AB100562893 /* VicesViewController.swift */,
 			);
 			path = Controllers;
@@ -316,7 +324,7 @@
 				52C17B97270B9B5800562893 /* ViceTableViewCell.swift in Sources */,
 				52C17B69270B9AB100562893 /* VicesViewController.swift in Sources */,
 				52BB8258270BDA7400F261DB /* UIFont+Extensions.swift in Sources */,
-				52BB824E270BCCFF00F261DB /* CreateViceViewController.swift in Sources */,
+				52BB824E270BCCFF00F261DB /* SaveViceViewController.swift in Sources */,
 				52C17B65270B9AB100562893 /* AppDelegate.swift in Sources */,
 				52BB8251270BD11C00F261DB /* Cache.swift in Sources */,
 				52BB8254270BD26200F261DB /* Vice.swift in Sources */,
@@ -501,7 +509,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = X6XFU66KA9;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Vices/Info.plist;
+				INFOPLIST_FILE = "Vices/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -529,7 +537,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = X6XFU66KA9;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Vices/Info.plist;
+				INFOPLIST_FILE = "Vices/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

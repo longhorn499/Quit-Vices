@@ -12,7 +12,7 @@ fileprivate let formatter = RelativeDateTimeFormatter()
 
 class ViceTableViewCell: UITableViewCell {
 
-    /// vertical or horizontal based on accessibility category
+    // TODO: vertical or horizontal based on accessibility category
     @IBOutlet weak private var containerStackView: UIStackView!
 
     @IBOutlet weak private var emojiLabel: UILabel!
@@ -40,7 +40,6 @@ class ViceTableViewCell: UITableViewCell {
         if days == 0 {
             timeLabel.text = "Today" // there is a formatter for this..?
         } else {
-            assert(days < 0)
             timeLabel.text = formatter.localizedString(
                 from: DateComponents(day: days)
             )

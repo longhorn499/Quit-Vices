@@ -8,6 +8,7 @@
 import UIKit
 
 // TODO: Fix background color of nav bar going under table (that works w/ dark and light)
+// TODO: Guard against duplication crash if there are duplicates it will crash (keep original if duplicate introduced)
 class VicesViewController: UIViewController {
 
     enum Section {
@@ -23,6 +24,7 @@ class VicesViewController: UIViewController {
         return []
     }()
 
+    /// hacky
     private var editingIndex: IndexPath?
 
     private lazy var dataSource = UITableViewDiffableDataSource<Section, Vice>(
@@ -32,8 +34,6 @@ class VicesViewController: UIViewController {
             return nil
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: "ViceTableViewCell", for: indexPath) as! ViceTableViewCell
-        // TODO: tapping should delegate back to here.. to remove it
-        // TODO: 2 swipe right options Edit and Delete
         cell.configure(vice: self.models[indexPath.row])
         return cell
     }
@@ -74,7 +74,7 @@ class VicesViewController: UIViewController {
     }
 
     func presentSaveVice(vice: Vice?) {
-        let create = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CreateViceViewController") as! CreateViceViewController
+        let create = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SaveViceViewController") as! SaveViceViewController
         create.delegate = self
         create.vice = vice
         present(create, animated: true)
@@ -118,24 +118,33 @@ extension VicesViewController: UITableViewDelegate {
         edit.backgroundColor = .systemPurple
         return UISwipeActionsConfiguration(actions: [delete, edit])
     }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        editingIndex = indexPath
+        presentSaveVice(vice: models[indexPath.row])
+    }
 }
 
 // MARK: CreateViceViewControllerDelegate
 
 extension VicesViewController: CreateViceViewControllerDelegate {
-    func createViceViewController(_ vc: CreateViceViewController, didSave vice: Vice) {
+    func createViceViewController(_ vc: SaveViceViewController, didSave vice: Vice) {
         vc.dismiss(animated: true) { [weak self] in
             guard let this = self else {
                 return
             }
             if this.editingIndex != nil {
-                this.editingIndex = nil
                 this.models[this.editingIndex!.row] = vice
+                this.editingIndex = nil
             } else {
                 this.models.append(vice)
             }
             this.applySnapshot()
             this.saveVices()
         }
+    }
+
+    func createViceViewControllerDidResign(_ vc: SaveViceViewController) {
+        editingIndex = nil
     }
 }
