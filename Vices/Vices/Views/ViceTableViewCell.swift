@@ -14,8 +14,6 @@ class ViceTableViewCell: UITableViewCell {
 
     // TODO: vertical or horizontal based on accessibility category
     @IBOutlet weak private var containerStackView: UIStackView!
-
-    @IBOutlet weak private var emojiLabel: UILabel!
     @IBOutlet weak private var nameLabel: UILabel!
     @IBOutlet weak private var timeLabel: UILabel!
 
@@ -26,17 +24,13 @@ class ViceTableViewCell: UITableViewCell {
     }
 
     func configure(vice: Vice) {
-        /// straightforward labels
-        if vice.emoji != nil {
-            emojiLabel.text = vice.emoji
-            emojiLabel.isHidden = false
-        } else {
-            emojiLabel.isHidden = true
-        }
         nameLabel.text = vice.name
-        /// time
-        let days = Calendar.current.dateComponents([.day], from: .now, to: vice.quittingDate).day!
+
+        ///  time
+        print(Date.todayMonthDayYear(), vice.quittingDate)
+        let days = Calendar.current.dateComponents([.day], from: .todayMonthDayYear(), to: vice.quittingDate).day!
         formatter.localizedString(from: DateComponents(day: days))
+        print("days:", days)
         if days == 0 {
             timeLabel.text = "Today" // there is a formatter for this..?
         } else {
@@ -47,10 +41,6 @@ class ViceTableViewCell: UITableViewCell {
     }
 
     private func setup() {
-        emojiLabel.font = UIFont.systemFont(
-            ofSize: 24,
-            weight: .regular
-        ).scaledFontforTextStyle(.body)
         nameLabel.font = UIFont.systemFont(
             ofSize: 24,
             weight: .semibold

@@ -46,26 +46,20 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="v97-yu-OHH">
                                                     <rect key="frame" x="20" y="20" width="334" height="62"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🚬" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zdr-s6-NnE">
-                                                            <rect key="frame" x="0.0" y="21" width="23" height="20.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nicotine" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wcp-t6-Tkr">
-                                                            <rect key="frame" x="31" y="22.5" width="56" height="17"/>
+                                                            <rect key="frame" x="0.0" y="22.5" width="56" height="17"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X days" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JoP-f2-44I">
-                                                            <rect key="frame" x="95" y="22.5" width="43.5" height="17"/>
+                                                            <rect key="frame" x="64" y="22.5" width="43.5" height="17"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="thc-AZ-Wyi">
-                                                            <rect key="frame" x="146.5" y="0.0" width="187.5" height="62"/>
+                                                            <rect key="frame" x="115.5" y="0.0" width="218.5" height="62"/>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         </view>
                                                     </subviews>
@@ -80,7 +74,6 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="containerStackView" destination="v97-yu-OHH" id="Q5v-ol-vbk"/>
-                                            <outlet property="emojiLabel" destination="zdr-s6-NnE" id="Z7A-AL-iXf"/>
                                             <outlet property="nameLabel" destination="Wcp-t6-Tkr" id="nGs-M7-PrU"/>
                                             <outlet property="timeLabel" destination="JoP-f2-44I" id="9gO-RO-mfH"/>
                                         </connections>

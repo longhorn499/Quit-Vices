@@ -13,8 +13,8 @@ protocol CreateViceViewControllerDelegate: AnyObject {
 
 }
 
-// TODO: Need emoji solution, at least for smoking/drinking default? how to make that werk (could add it using word list.. lol)
-// TODO: Wrap in scrollview, keyboard dismissing
+// TODO: Wrap in scrollview
+// TODO: simple keyboard dismissing from textField
 class SaveViceViewController: UIViewController {
 
     var vice: Vice?
@@ -50,6 +50,9 @@ class SaveViceViewController: UIViewController {
 
     @IBAction func didTapSave(_ sender: UIButton) {
         assert(!nameTextField.text!.isEmpty)
-        delegate?.createViceViewController(self, didSave: .init(emoji: nil, name: nameTextField.text!, quittingDate: quittingDatePicker.date))
+        
+        let mdyComp = Calendar.current.dateComponents([.month, .day, .year], from: quittingDatePicker.date)
+        let mdyDate = Date.monthDayYearDate(month: mdyComp.month!, day: mdyComp.day!, year: mdyComp.year!)
+        delegate?.createViceViewController(self, didSave: .init(name: nameTextField.text!, quittingDate: mdyDate))
     }
 }
