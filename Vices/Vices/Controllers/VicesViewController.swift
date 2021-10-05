@@ -25,7 +25,6 @@ class VicesViewController: UIViewController {
         return []
     }()
 
-    /// hacky
     private var editingIndex: IndexPath?
 
     private lazy var dataSource = UITableViewDiffableDataSource<Section, Vice>(
@@ -81,10 +80,40 @@ class VicesViewController: UIViewController {
         present(create, animated: true)
     }
 
+    func addVice(_ vice: Vice) {
+        guard !isDuplicate(vice: vice) else {
+            return
+        }
+        models.append(vice)
+        applySnapshot()
+        saveVices()
+    }
+
+    func isDuplicate(vice: Vice) -> Bool {
+        /// fine for now, duplicates cause a crash, could indicate in some way to user
+        guard !(models.contains { $0 == vice }) else {
+            return true
+        }
+        return false
+    }
+
     // MARK: - IBAction
 
     @IBAction func didTapAddVice(_ sender: UIBarButtonItem) {
-        presentSaveVice(vice: nil)
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let nicotine = UIAlertAction(title: "🍺", style: .default) { _ in
+            self.addVice(.init(name: "🍺 Alcohol"))
+        }
+        alert.addAction(nicotine)
+        let alcohol = UIAlertAction(title: "🚬", style: .default) { _ in
+            self.addVice(.init(name: "🚬 Nicotine"))
+        }
+        alert.addAction(alcohol)
+        let custom = UIAlertAction(title: "Custom", style: .default) { _ in
+            self.presentSaveVice(vice: nil)
+        }
+        alert.addAction(custom)
+        present(alert, animated: true)
     }
 
     // MARK: - Notifications
@@ -110,13 +139,17 @@ extension VicesViewController: UITableViewDelegate {
         }
         ///  models[indexPath.row].quittingDate
         ///  only show if this date is not in today
+        ///  also should probably dbl check before commiting action
         let reset = UIContextualAction(
             style: .normal,
             title: "Reset"
         ) {  (_, _, completion) in
-            self.models[indexPath.row].quittingDate = .todayMonthDayYear()
-            self.applySnapshot()
-            self.saveVices()
+            let new = Vice(name: self.models[indexPath.row].name, quittingDate: .todayMonthDayYear())
+            if !self.isDuplicate(vice: new) {
+                self.models[indexPath.row] = new
+                self.applySnapshot()
+                self.saveVices()
+            }
             completion(true)
         }
         reset.backgroundColor = .systemIndigo
@@ -137,19 +170,17 @@ extension VicesViewController: CreateViceViewControllerDelegate {
             guard let this = self else {
                 return
             }
-            /// fine for now, duplicates cause a crash, could indicate in some way
-            guard !(this.models.contains { $0 == vice }) else {
-                return
-            }
-
             if this.editingIndex != nil {
-                this.models[this.editingIndex!.row] = vice
+                /// dry - method for edit
+                if !(this.models.contains { $0 == vice }) {
+                    this.models[this.editingIndex!.row] = vice
+                    this.applySnapshot()
+                    this.saveVices()
+                }
                 this.editingIndex = nil
             } else {
-                this.models.append(vice)
+                this.addVice(vice)
             }
-            this.applySnapshot()
-            this.saveVices()
         }
     }
 
