@@ -12,7 +12,7 @@ fileprivate let formatter = RelativeDateTimeFormatter()
 
 class ViceTableViewCell: UITableViewCell {
 
-    // TODO: vertical or horizontal based on accessibility category
+    // TODO: vertical or horizontal based on accessibility category + decide on l/r styling of label
     @IBOutlet weak private var containerStackView: UIStackView!
     @IBOutlet weak private var nameLabel: UILabel!
     @IBOutlet weak private var timeLabel: UILabel!

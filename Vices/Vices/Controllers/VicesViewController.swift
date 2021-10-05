@@ -9,7 +9,6 @@ import UIKit
 
 // TODO: Fix background color of nav bar going under table (that works w/ dark and light)
 // TODO: Fix cell layout with large text (days and name should expand.., or put it back in the stackView and change from vert to horizontal)
-// TODO: Guard against duplication crash if there are duplicates it will crash (keep original if duplicate introduced)
 class VicesViewController: UIViewController {
 
     enum Section {
@@ -156,6 +155,11 @@ extension VicesViewController: CreateViceViewControllerDelegate {
             guard let this = self else {
                 return
             }
+            /// fine for now, duplicates cause a crash, could indicate in some way
+            guard !(this.models.contains { $0 == vice }) else {
+                return
+            }
+
             if this.editingIndex != nil {
                 this.models[this.editingIndex!.row] = vice
                 this.editingIndex = nil
