@@ -12,8 +12,8 @@ fileprivate let formatter = RelativeDateTimeFormatter()
 
 class ViceTableViewCell: UITableViewCell {
 
-    // TODO: vertical or horizontal based on accessibility category + decide on l/r styling of label
-    @IBOutlet weak private var containerStackView: UIStackView!
+    // TODO: vertical or horizontal based on accessibility category
+    @IBOutlet weak private var containerStackView: UIStackView! // re-connect
     @IBOutlet weak private var nameLabel: UILabel!
     @IBOutlet weak private var timeLabel: UILabel!
 
@@ -27,16 +27,11 @@ class ViceTableViewCell: UITableViewCell {
         nameLabel.text = vice.name
 
         ///  time
-        print(Date.todayMonthDayYear(), vice.quittingDate)
-        let days = Calendar.current.dateComponents([.day], from: .todayMonthDayYear(), to: vice.quittingDate).day!
-        formatter.localizedString(from: DateComponents(day: days))
-        print("days:", days)
+        let days = vice.quittingDate.daysFromToday()
         if days == 0 {
             timeLabel.text = "Today" // there is a formatter for this..?
         } else {
-            timeLabel.text = formatter.localizedString(
-                from: DateComponents(day: days)
-            )
+            timeLabel.text = formatter.localizedString(from: DateComponents(day: days))
         }
     }
 

@@ -7,9 +7,8 @@
 
 import UIKit
 
-// NEXT UP!
-// TODO: Fix background color of nav bar going under table (that works w/ dark and light)
-// TODO: Fix cell layout with large text (days and name should expand.., or put it back in the stackView and change from vert to horizontal)
+// TODO: NEXT UP Fix background color of nav bar going under table (that works w/ dark and light)
+// TODO: NEXT UP Fix cell layout with large text (days and name should expand.., or put it back in the stackView and change from vert to horizontal)
 class VicesViewController: UIViewController {
 
     enum Section {

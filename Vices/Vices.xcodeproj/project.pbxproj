@@ -514,6 +514,7 @@
 				DEVELOPMENT_TEAM = X6XFU66KA9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Vices/Supporting Files/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Quit Vices";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -542,6 +543,7 @@
 				DEVELOPMENT_TEAM = X6XFU66KA9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Vices/Supporting Files/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Quit Vices";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

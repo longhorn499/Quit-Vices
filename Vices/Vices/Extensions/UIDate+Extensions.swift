@@ -17,4 +17,8 @@ extension Date {
         let comp = DateComponents(year: year, month: month, day: day)
         return calendar.date(from: comp)!
     }
+
+    func daysFromToday(calendar: Calendar = .current) -> Int {
+        return calendar.dateComponents([.day], from: .todayMonthDayYear(), to: self).day!
+    }
 }
