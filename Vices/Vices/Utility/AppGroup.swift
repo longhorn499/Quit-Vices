@@ -9,11 +9,11 @@ import Foundation
 
 // https://useyourloaf.com/blog/sharing-data-with-a-widget/
 enum AppGroup: String {
-  case todos = "group.com.frr.todos"
+  case vices = "group.com.ffr.vices"
 
     var containerURL: URL {
         switch self {
-        case .todos:
+        case .vices:
             return FileManager.default.containerURL(
                 forSecurityApplicationGroupIdentifier: rawValue
             )!

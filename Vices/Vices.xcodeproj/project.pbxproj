@@ -83,6 +83,8 @@
 		52B56725270E4C7C00424327 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52B56727270E4C7C00424327 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52B56732270E4D2C00424327 /* AppGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGroup.swift; sourceTree = "<group>"; };
+		52B56736270E4FB200424327 /* VicesWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VicesWidgetExtension.entitlements; sourceTree = "<group>"; };
+		52B56737270E500C00424327 /* Vices.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Vices.entitlements; sourceTree = "<group>"; };
 		52BB824D270BCCFF00F261DB /* SaveViceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveViceViewController.swift; sourceTree = "<group>"; };
 		52BB8250270BD11C00F261DB /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		52BB8253270BD26200F261DB /* Vice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vice.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 		52C17B58270B9AB100562893 = {
 			isa = PBXGroup;
 			children = (
+				52B56736270E4FB200424327 /* VicesWidgetExtension.entitlements */,
 				52C17B63270B9AB100562893 /* Vices */,
 				52C17B7A270B9AB200562893 /* VicesTests */,
 				52C17B84270B9AB200562893 /* VicesUITests */,
@@ -222,6 +225,7 @@
 		52C17B63270B9AB100562893 /* Vices */ = {
 			isa = PBXGroup;
 			children = (
+				52B56737270E500C00424327 /* Vices.entitlements */,
 				52C17B94270B9AD000562893 /* Controllers */,
 				52BB8256270BDA6500F261DB /* Extensions */,
 				52BB8252270BD25A00F261DB /* Model */,
@@ -516,6 +520,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = VicesWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = X6XFU66KA9;
@@ -543,6 +548,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = VicesWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = X6XFU66KA9;
@@ -687,6 +693,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Vices/Vices.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = X6XFU66KA9;
@@ -717,6 +724,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Vices/Vices.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = X6XFU66KA9;

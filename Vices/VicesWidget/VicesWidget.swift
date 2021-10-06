@@ -39,7 +39,7 @@ struct Provider: IntentTimelineProvider {
     // MARK: - Helper
 
     private func loadVices() -> [Vice] {
-        let url = AppGroup.todos.containerURL.appendingPathComponent("vices")
+        let url = AppGroup.vices.containerURL.appendingPathComponent("vices")
         do {
             let data = try Data(contentsOf: url)
             let vices = try JSONDecoder().decode([Vice].self, from: data)
@@ -76,6 +76,7 @@ struct TODOsWidgetEntryView : View {
     var entry: Provider.Entry
     let prefix: Int = 4
 
+    // TODO: Show num days and style a bit!
     var body: some View {
         if entry.vices.isEmpty {
             Text("No Vices").bold()
@@ -113,7 +114,7 @@ struct TODOsWidget: Widget {
             TODOsWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("Current Vices")
-        .description("Show the list of TODOs for today")
+        .description("Show the list of vices")
         .supportedFamilies([.systemSmall])
     }
 }
@@ -125,7 +126,7 @@ struct TODOsWidget_Previews: PreviewProvider {
         TODOsWidgetEntryView(
             entry: VicesEntry(
                 date: Date.todayMonthDayYear(),
-                vices: [],
+                vices: [], // do placeholder
                 configuration: ConfigurationIntent()
             )
         )

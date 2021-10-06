@@ -69,7 +69,13 @@ class VicesViewController: UIViewController {
     }
 
     func saveVices() {
-        try? Cache.save(models, path: "vices")
+        do {
+            let data = try Cache.save(models, path: "vices")
+            /// appgroup for sharing w/ widget, maybe silly to return data from Cache.save but it avoids doing same thing twice
+            try data.write(to: AppGroup.vices.containerURL.appendingPathComponent("vices"))
+        } catch {
+            print("error saving vices", error)
+        }
     }
 
     func presentSaveVice(vice: Vice?) {

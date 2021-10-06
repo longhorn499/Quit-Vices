@@ -8,7 +8,7 @@
 import Foundation
 
 struct Cache {
-    static func save<T: Encodable>(_ object: T, path: String, fileManager: FileManager = .default) throws {
+    static func save<T: Encodable>(_ object: T, path: String, fileManager: FileManager = .default) throws -> Data {
         let folderURLs = fileManager.urls(
             for: .cachesDirectory,
             in: .userDomainMask
@@ -17,6 +17,7 @@ struct Cache {
         let fileURL = folderURLs[0].appendingPathComponent(path + ".cache")
         let data = try JSONEncoder().encode(object)
         try data.write(to: fileURL)
+        return data
     }
 
     static func read<T: Decodable>(path: String, fileManager: FileManager = .default) throws -> T {
