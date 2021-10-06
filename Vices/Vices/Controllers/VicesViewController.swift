@@ -7,8 +7,8 @@
 
 import UIKit
 
-// TODO: NEXT UP Fix background color of nav bar going under table (that works w/ dark and light)
 // TODO: NEXT UP Fix cell layout with large text (days and name should expand.., or put it back in the stackView and change from vert to horizontal)
+// TODO: Fix background color of nav bar going under table (that works w/ dark and light) https://stackoverflow.com/questions/48735718/grey-background-above-uitableview-when-large-titles-set
 class VicesViewController: UIViewController {
 
     enum Section {
