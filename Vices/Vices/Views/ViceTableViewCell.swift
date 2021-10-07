@@ -7,13 +7,10 @@
 
 import UIKit
 
-/// only create one, expensive to init - move to global place that's better
-fileprivate let formatter = RelativeDateTimeFormatter()
-
 class ViceTableViewCell: UITableViewCell {
 
     // TODO: vertical or horizontal based on accessibility category
-    @IBOutlet weak private var containerStackView: UIStackView! // re-connect
+    @IBOutlet weak private var containerStackView: UIStackView!
     @IBOutlet weak private var nameLabel: UILabel!
     @IBOutlet weak private var timeLabel: UILabel!
 
@@ -25,14 +22,7 @@ class ViceTableViewCell: UITableViewCell {
 
     func configure(vice: Vice) {
         nameLabel.text = vice.name
-
-        ///  time
-        let days = vice.quittingDate.daysFromToday()
-        if days == 0 {
-            timeLabel.text = "Today" // there is a formatter for this..?
-        } else {
-            timeLabel.text = formatter.localizedString(from: DateComponents(day: days))
-        }
+        timeLabel.text = Formatters.quittingDay(vice.quittingDate)
     }
 
     private func setup() {

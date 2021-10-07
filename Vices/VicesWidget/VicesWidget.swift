@@ -70,20 +70,20 @@ struct VicesEntry: TimelineEntry {
     }
 }
 
-// MARK: - TODOsWidgetEntryView
+// MARK: - VicesWidgetEntryView
 
-struct TODOsWidgetEntryView : View {
+struct VicesWidgetEntryView : View {
     var entry: Provider.Entry
-    let prefix: Int = 4
+    let prefix: Int = 3
 
-    // TODO: Show num days and style a bit!
     var body: some View {
         if entry.vices.isEmpty {
             Text("No Vices").bold()
         } else {
             VStack(alignment: .leading, spacing: 4.0) {
                 ForEach(entry.vices.prefix(prefix), id: \.self) { vice in
-                    Text("- \(vice.name)")
+                    Text("\(vice.name)").bold()
+                    Text("\(Formatters.quittingDay(vice.quittingDate))")
                 }
                 entry.vices.count > prefix ?
                     Text("\(entry.vices.count - entry.vices.prefix(prefix).count) more vices")
@@ -103,15 +103,15 @@ struct TODOsWidgetEntryView : View {
     }
 }
 
-// MARK: - TODOsWidget
+// MARK: - VicesWidget
 
 @main
-struct TODOsWidget: Widget {
-    let kind: String = "TODOsWidget"
+struct VicesWidget: Widget {
+    let kind: String = "VicesWidget"
 
     var body: some WidgetConfiguration {
         IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
-            TODOsWidgetEntryView(entry: entry)
+            VicesWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("Current Vices")
         .description("Show the list of vices")
@@ -121,12 +121,15 @@ struct TODOsWidget: Widget {
 
 // MARK: - Previews
 
-struct TODOsWidget_Previews: PreviewProvider {
+struct VicesWidget_Previews: PreviewProvider {
     static var previews: some View {
-        TODOsWidgetEntryView(
+        VicesWidgetEntryView(
             entry: VicesEntry(
                 date: Date.todayMonthDayYear(),
-                vices: [], // do placeholder
+                vices: [
+                    .init(name: "Smoking"),
+                    .init(name: "Drinking")
+                ],
                 configuration: ConfigurationIntent()
             )
         )

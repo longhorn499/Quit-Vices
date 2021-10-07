@@ -114,10 +114,12 @@ class VicesViewController: UIViewController {
             self.addVice(.init(name: "🚬 Nicotine"))
         }
         alert.addAction(alcohol)
-        let custom = UIAlertAction(title: "Custom", style: .default) { _ in
+        let custom = UIAlertAction(title: "Other", style: .default) { _ in
             self.presentSaveVice(vice: nil)
         }
         alert.addAction(custom)
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel)
+        alert.addAction(cancel)
         present(alert, animated: true)
     }
 
