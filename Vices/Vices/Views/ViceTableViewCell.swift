@@ -7,6 +7,9 @@
 
 import UIKit
 
+// Get name to extend all the way to date when going multiline
+// just need right mix of configurations, hugging priority, etc.
+// looks okay rn
 class ViceTableViewCell: UITableViewCell {
 
     @IBOutlet weak private var containerStackView: UIStackView!
