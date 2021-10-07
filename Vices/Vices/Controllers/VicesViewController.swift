@@ -74,7 +74,7 @@ class VicesViewController: UIViewController {
             /// appgroup for sharing w/ widget, maybe silly to return data from Cache.save but it avoids doing same thing twice
             try data.write(to: AppGroup.vices.containerURL.appendingPathComponent("vices"))
         } catch {
-            print("error saving vices", error)
+            print("Error saving:", error)
         }
     }
 
@@ -120,6 +120,7 @@ class VicesViewController: UIViewController {
         alert.addAction(custom)
         let cancel = UIAlertAction(title: "Cancel", style: .cancel)
         alert.addAction(cancel)
+        alert.view.tintColor = .systemPurple
         present(alert, animated: true)
     }
 

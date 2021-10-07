@@ -10,7 +10,6 @@ import UIKit
 protocol CreateViceViewControllerDelegate: AnyObject {
     func createViceViewController(_ vc: SaveViceViewController, didSave vice: Vice)
     func createViceViewControllerDidResign(_ vc: SaveViceViewController)
-
 }
 
 class SaveViceViewController: UIViewController {
@@ -21,8 +20,9 @@ class SaveViceViewController: UIViewController {
     weak var delegate: CreateViceViewControllerDelegate?
 
     @IBOutlet weak private var quittingDatePicker: UIDatePicker!
-    /// doesn't look good
+    /// doesn't look _great_
     @IBOutlet weak private var nameTextField: UITextField!
+    /// expand w/ dynamic type
     @IBOutlet weak private var saveButton: UIButton!
 
     // MARK: - View Lifecycle

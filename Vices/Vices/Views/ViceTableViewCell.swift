@@ -9,7 +9,6 @@ import UIKit
 
 class ViceTableViewCell: UITableViewCell {
 
-    // TODO: vertical or horizontal based on accessibility category
     @IBOutlet weak private var containerStackView: UIStackView!
     @IBOutlet weak private var nameLabel: UILabel!
     @IBOutlet weak private var timeLabel: UILabel!
@@ -34,5 +33,14 @@ class ViceTableViewCell: UITableViewCell {
             ofSize: 24,
             weight: .regular
         ).scaledFontforTextStyle(.body)
+
+        /// accessibility
+        if UIApplication.shared.preferredContentSizeCategory.isAccessibilityCategory {
+            containerStackView.axis = .vertical
+            containerStackView.alignment = .leading
+        } else {
+            containerStackView.axis = .horizontal
+            containerStackView.alignment = .center
+        }
     }
 }
