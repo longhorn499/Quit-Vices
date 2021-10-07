@@ -207,9 +207,9 @@
 			children = (
 				52B56736270E4FB200424327 /* VicesWidgetExtension.entitlements */,
 				52C17B63270B9AB100562893 /* Vices */,
+				52B56721270E4C7B00424327 /* VicesWidget */,
 				52C17B7A270B9AB200562893 /* VicesTests */,
 				52C17B84270B9AB200562893 /* VicesUITests */,
-				52B56721270E4C7B00424327 /* VicesWidget */,
 				52B5671C270E4C7B00424327 /* Frameworks */,
 				52C17B62270B9AB100562893 /* Products */,
 			);

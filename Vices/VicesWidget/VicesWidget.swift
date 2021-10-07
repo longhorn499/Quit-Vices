@@ -74,7 +74,7 @@ struct VicesEntry: TimelineEntry {
 
 struct VicesWidgetEntryView : View {
     var entry: Provider.Entry
-    let prefix: Int = 3
+    let prefix: Int = 2
 
     var body: some View {
         if entry.vices.isEmpty {
@@ -85,8 +85,9 @@ struct VicesWidgetEntryView : View {
                     Text("\(vice.name)").bold()
                     Text("\(Formatters.quittingDay(vice.quittingDate))")
                 }
+                Spacer()
                 entry.vices.count > prefix ?
-                    Text("\(entry.vices.count - entry.vices.prefix(prefix).count) more vices")
+                    Text("+\(entry.vices.count - entry.vices.prefix(prefix).count) more")
                     .font(.callout): nil
                 Spacer()
             }

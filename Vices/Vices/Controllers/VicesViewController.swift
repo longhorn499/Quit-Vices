@@ -6,8 +6,8 @@
 //
 
 import UIKit
+import WidgetKit
 
-// TODO: Fix background color of nav bar going under table (that works w/ dark and light) https://stackoverflow.com/questions/48735718/grey-background-above-uitableview-when-large-titles-set
 class VicesViewController: UIViewController {
 
     enum Section {
@@ -72,6 +72,7 @@ class VicesViewController: UIViewController {
             let data = try Cache.save(models, path: "vices")
             /// appgroup for sharing w/ widget, maybe silly to return data from Cache.save but it avoids doing same thing twice
             try data.write(to: AppGroup.vices.containerURL.appendingPathComponent("vices"))
+            WidgetCenter.shared.reloadTimelines(ofKind: "VicesWidget")
         } catch {
             print("Error saving:", error)
         }
@@ -104,6 +105,7 @@ class VicesViewController: UIViewController {
     // MARK: - IBAction
 
     @IBAction func didTapAddVice(_ sender: UIBarButtonItem) {
+        /// these are maybe not great but help you get started, really just want to presentSaveVices most of the time
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         let nicotine = UIAlertAction(title: "🍺", style: .default) { _ in
             self.addVice(.init(name: "🍺 Alcohol"))
