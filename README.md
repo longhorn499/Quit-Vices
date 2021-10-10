@@ -1,4 +1,4 @@
-# Vices
+# Quit Vices
 
 what are you trying to quit?
 
