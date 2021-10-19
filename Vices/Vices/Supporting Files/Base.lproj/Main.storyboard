@@ -80,7 +80,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="fhy-WX-dPP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ATG-oE-5Wo"/>
                             <constraint firstAttribute="bottom" secondItem="fhy-WX-dPP" secondAttribute="bottom" id="NKb-u7-Qed"/>
