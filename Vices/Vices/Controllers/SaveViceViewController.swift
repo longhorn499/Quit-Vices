@@ -20,9 +20,8 @@ class SaveViceViewController: UIViewController {
     weak var delegate: CreateViceViewControllerDelegate?
 
     @IBOutlet weak private var quittingDatePicker: UIDatePicker!
-    /// doesn't look _great_
     @IBOutlet weak private var nameTextField: UITextField!
-    /// expand w/ dynamic type
+    @IBOutlet weak private var reasonTextField: UITextField!
     @IBOutlet weak private var saveButton: UIButton!
 
     // MARK: - View Lifecycle
@@ -33,11 +32,14 @@ class SaveViceViewController: UIViewController {
         /// if passed in, configure fields
         if vice != nil {
             nameTextField.text = vice!.name
+            reasonTextField.text = vice!.reason
             quittingDatePicker.date = vice!.quittingDate
         }
         nameTextField.addTarget(self, action: #selector(self.nameChanged), for: .editingChanged)
         nameTextField.delegate = self
         nameChanged()
+
+        reasonTextField.delegate = self
 
         /// best way for simple dismiss keyboard on tap background? don't want a keyboard "manager"
         let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
@@ -66,7 +68,8 @@ class SaveViceViewController: UIViewController {
         
         let mdyComp = Calendar.current.dateComponents([.month, .day, .year], from: quittingDatePicker.date)
         let mdyDate = Date.monthDayYearDate(month: mdyComp.month!, day: mdyComp.day!, year: mdyComp.year!)
-        delegate?.createViceViewController(self, didSave: .init(name: nameTextField.text!, quittingDate: mdyDate))
+        let vice = Vice(name: nameTextField.text!, quittingDate: mdyDate, reason: reasonTextField.text)
+        delegate?.createViceViewController(self, didSave: vice)
     }
 }
 
@@ -74,6 +77,10 @@ class SaveViceViewController: UIViewController {
 
 extension SaveViceViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == nameTextField {
+            reasonTextField.becomeFirstResponder()
+            return true
+        }
         textField.resignFirstResponder()
         return true
     }
