@@ -44,23 +44,28 @@
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="102"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="X days" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JoP-f2-44I">
-                                                    <rect key="frame" x="314.5" y="16" width="43.5" height="17"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="15V-tn-G1V">
-                                                    <rect key="frame" x="16" y="16" width="290.5" height="34"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="J9z-gn-ykm">
+                                                    <rect key="frame" x="16" y="16" width="342" height="34"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="1000" text="Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wcp-t6-Tkr">
-                                                            <rect key="frame" x="0.0" y="0.0" width="290.5" height="17"/>
-                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Reason" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hId-Rs-cdc" userLabel="Reason Label">
-                                                            <rect key="frame" x="0.0" y="17" width="290.5" height="17"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="15V-tn-G1V">
+                                                            <rect key="frame" x="0.0" y="0.0" width="167" height="34"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="1000" text="Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wcp-t6-Tkr">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="167" height="17"/>
+                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Reason" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hId-Rs-cdc" userLabel="Reason Label">
+                                                                    <rect key="frame" x="0.0" y="17" width="167" height="17"/>
+                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="X days" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JoP-f2-44I">
+                                                            <rect key="frame" x="175" y="0.0" width="167" height="17"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -69,15 +74,14 @@
                                                 </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="JoP-f2-44I" secondAttribute="trailing" constant="16" id="11Z-Ug-lpb"/>
-                                                <constraint firstItem="JoP-f2-44I" firstAttribute="leading" secondItem="15V-tn-G1V" secondAttribute="trailing" constant="8" id="XLg-lO-nEy"/>
-                                                <constraint firstItem="JoP-f2-44I" firstAttribute="top" secondItem="15V-tn-G1V" secondAttribute="top" id="dPV-O7-EO6"/>
-                                                <constraint firstItem="15V-tn-G1V" firstAttribute="leading" secondItem="BVl-1Y-qse" secondAttribute="leading" constant="16" id="hae-E3-ccA"/>
-                                                <constraint firstItem="15V-tn-G1V" firstAttribute="top" secondItem="BVl-1Y-qse" secondAttribute="top" constant="16" id="jnV-pQ-iOR"/>
-                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="15V-tn-G1V" secondAttribute="bottom" priority="999" constant="16" id="sNy-SF-eqr"/>
+                                                <constraint firstItem="J9z-gn-ykm" firstAttribute="leading" secondItem="BVl-1Y-qse" secondAttribute="leading" constant="16" id="Gy7-lu-HzP"/>
+                                                <constraint firstAttribute="trailing" secondItem="J9z-gn-ykm" secondAttribute="trailing" constant="16" id="I6l-Ue-MR0"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="J9z-gn-ykm" secondAttribute="bottom" priority="999" constant="16" id="xYw-Qg-07C"/>
+                                                <constraint firstItem="J9z-gn-ykm" firstAttribute="top" secondItem="BVl-1Y-qse" secondAttribute="top" constant="16" id="ySo-gt-yFL"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="containerStackView" destination="J9z-gn-ykm" id="W7I-Sa-jyF"/>
                                             <outlet property="nameLabel" destination="Wcp-t6-Tkr" id="nGs-M7-PrU"/>
                                             <outlet property="reasonLabel" destination="hId-Rs-cdc" id="RRM-E1-5HA"/>
                                             <outlet property="timeLabel" destination="JoP-f2-44I" id="9gO-RO-mfH"/>

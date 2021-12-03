@@ -14,7 +14,7 @@ class ViceTableViewCell: UITableViewCell {
 
     @IBOutlet weak private var containerStackView: UIStackView!
     @IBOutlet weak private var nameLabel: UILabel!
-    @IBOutlet weak var reasonLabel: UILabel!
+    @IBOutlet weak private var reasonLabel: UILabel!
     @IBOutlet weak private var timeLabel: UILabel!
 
     override func awakeFromNib() {
@@ -44,8 +44,19 @@ class ViceTableViewCell: UITableViewCell {
             weight: .regular
         ).scaledFontforTextStyle(.body)
         timeLabel.font = UIFont.systemFont(
-            ofSize: 24,
+            ofSize: 20,
             weight: .regular
         ).scaledFontforTextStyle(.body)
+
+        /// accessibility
+        if UIApplication.shared.preferredContentSizeCategory.isAccessibilityCategory {
+            containerStackView.axis = .vertical
+            containerStackView.alignment = .leading
+            timeLabel.textAlignment = .left
+        } else {
+            containerStackView.axis = .horizontal
+            containerStackView.alignment = .center
+            timeLabel.textAlignment = .right
+        }
     }
 }
