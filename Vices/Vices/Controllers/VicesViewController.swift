@@ -108,11 +108,11 @@ class VicesViewController: UIViewController {
         /// these are maybe not great but help you get started, really just want to presentSaveVices most of the time
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         let nicotine = UIAlertAction(title: "🍺", style: .default) { _ in
-            self.addVice(.init(name: "🍺 Alcohol"))
+            self.addVice(.init(name: "🍺 Alcohol", reason: nil))
         }
         alert.addAction(nicotine)
         let alcohol = UIAlertAction(title: "🚬", style: .default) { _ in
-            self.addVice(.init(name: "🚬 Nicotine"))
+            self.addVice(.init(name: "🚬 Nicotine", reason: nil))
         }
         alert.addAction(alcohol)
         let custom = UIAlertAction(title: "Other", style: .default) { _ in
@@ -153,7 +153,11 @@ extension VicesViewController: UITableViewDelegate {
             style: .normal,
             title: "Reset"
         ) {  (_, _, completion) in
-            let new = Vice(name: self.models[indexPath.row].name, quittingDate: .todayMonthDayYear())
+            let new = Vice(
+                name: self.models[indexPath.row].name,
+                quittingDate: .todayMonthDayYear(),
+                reason: self.models[indexPath.row].reason
+            )
             if !self.isDuplicate(vice: new) {
                 self.models[indexPath.row] = new
                 self.applySnapshot()

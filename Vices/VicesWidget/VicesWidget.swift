@@ -128,8 +128,8 @@ struct VicesWidget_Previews: PreviewProvider {
             entry: VicesEntry(
                 date: Date.todayMonthDayYear(),
                 vices: [
-                    .init(name: "Smoking"),
-                    .init(name: "Drinking")
+                    .init(name: "Smoking", reason: nil),
+                    .init(name: "Drinking", reason: nil)
                 ],
                 configuration: ConfigurationIntent()
             )

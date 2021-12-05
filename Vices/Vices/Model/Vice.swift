@@ -13,7 +13,7 @@ struct Vice: Hashable, Codable {
     /// may end up adding this.. reminds you when you come back
     var reason: String?
 
-    init(name: String, quittingDate: Date = .todayMonthDayYear(), reason: String? = nil) {
+    init(name: String, quittingDate: Date = .todayMonthDayYear(), reason: String?) {
         self.name = name
         self.quittingDate = quittingDate
         self.reason = reason
