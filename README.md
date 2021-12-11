@@ -1,6 +1,6 @@
 # Quit Vices
 
-what are you trying to quit?
+What are you trying to quit?
 
 ![ss](Assets/screenshots/repo.png)
 
