@@ -92,6 +92,7 @@ class VicesViewController: UIViewController {
         models.append(vice)
         applySnapshot()
         saveVices()
+        UserReviews.incrementReviewActionCount()
     }
 
     func isDuplicate(vice: Vice) -> Bool {
@@ -144,6 +145,7 @@ extension VicesViewController: UITableViewDelegate {
             self.models.remove(at: indexPath.row)
             self.applySnapshot()
             self.saveVices()
+            UserReviews.incrementReviewActionCount()
             completion(true)
         }
         ///  models[indexPath.row].quittingDate
@@ -162,6 +164,7 @@ extension VicesViewController: UITableViewDelegate {
                 self.models[indexPath.row] = new
                 self.applySnapshot()
                 self.saveVices()
+                UserReviews.incrementReviewActionCount()
             }
             completion(true)
         }
@@ -189,6 +192,7 @@ extension VicesViewController: CreateViceViewControllerDelegate {
                     this.models[this.editingIndex!.row] = vice
                     this.applySnapshot()
                     this.saveVices()
+                    UserReviews.incrementReviewActionCount()
                 }
                 this.editingIndex = nil
             } else {

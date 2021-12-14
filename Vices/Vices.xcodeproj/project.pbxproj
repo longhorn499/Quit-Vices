@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5243FFE4270CFA8100AF8163 /* UIDate+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5243FFE3270CFA8100AF8163 /* UIDate+Extensions.swift */; };
+		5270BDD1276817C600FDA660 /* UserReviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5270BDD0276817C600FDA660 /* UserReviews.swift */; };
 		52AF7CA2270E71A600596E80 /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AF7CA1270E71A600596E80 /* Formatters.swift */; };
 		52AF7CA3270E733700596E80 /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AF7CA1270E71A600596E80 /* Formatters.swift */; };
 		52B5671E270E4C7B00424327 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B5671D270E4C7B00424327 /* WidgetKit.framework */; };
@@ -77,6 +78,7 @@
 
 /* Begin PBXFileReference section */
 		5243FFE3270CFA8100AF8163 /* UIDate+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDate+Extensions.swift"; sourceTree = "<group>"; };
+		5270BDD0276817C600FDA660 /* UserReviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserReviews.swift; sourceTree = "<group>"; };
 		52AF7CA1270E71A600596E80 /* Formatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
 		52B5671B270E4C7B00424327 /* VicesWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = VicesWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		52B5671D270E4C7B00424327 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
@@ -168,6 +170,7 @@
 				52B56732270E4D2C00424327 /* AppGroup.swift */,
 				52BB8250270BD11C00F261DB /* Cache.swift */,
 				52AF7CA1270E71A600596E80 /* Formatters.swift */,
+				5270BDD0276817C600FDA660 /* UserReviews.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -454,6 +457,7 @@
 				52C17B97270B9B5800562893 /* ViceTableViewCell.swift in Sources */,
 				52B56729270E4C7C00424327 /* VicesWidget.intentdefinition in Sources */,
 				52C17B69270B9AB100562893 /* VicesViewController.swift in Sources */,
+				5270BDD1276817C600FDA660 /* UserReviews.swift in Sources */,
 				52BB8258270BDA7400F261DB /* UIFont+Extensions.swift in Sources */,
 				52BB824E270BCCFF00F261DB /* SaveViceViewController.swift in Sources */,
 				5243FFE4270CFA8100AF8163 /* UIDate+Extensions.swift in Sources */,
