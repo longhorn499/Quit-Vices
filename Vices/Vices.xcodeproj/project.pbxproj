@@ -39,6 +39,7 @@
 		52F3EC2327C6F75C00D7DC08 /* AppIconsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3EC2227C6F75C00D7DC08 /* AppIconsTableViewController.swift */; };
 		52F3EC2527C6FF0700D7DC08 /* AppIconTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3EC2427C6FF0700D7DC08 /* AppIconTableViewCell.swift */; };
 		52F3EC2727C6FF1700D7DC08 /* Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3EC2627C6FF1700D7DC08 /* Icons.swift */; };
+		52F3EC4D27C84CA400D7DC08 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3EC4C27C84CA400D7DC08 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +115,7 @@
 		52F3EC2227C6F75C00D7DC08 /* AppIconsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconsTableViewController.swift; sourceTree = "<group>"; };
 		52F3EC2427C6FF0700D7DC08 /* AppIconTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconTableViewCell.swift; sourceTree = "<group>"; };
 		52F3EC2627C6FF1700D7DC08 /* Icons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icons.swift; sourceTree = "<group>"; };
+		52F3EC4C27C84CA400D7DC08 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -271,6 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				52F3EC2227C6F75C00D7DC08 /* AppIconsTableViewController.swift */,
+				52F3EC4C27C84CA400D7DC08 /* SettingsViewController.swift */,
 				52BB824D270BCCFF00F261DB /* SaveViceViewController.swift */,
 				52C17B68270B9AB100562893 /* VicesViewController.swift */,
 			);
@@ -473,6 +476,7 @@
 				5243FFE4270CFA8100AF8163 /* UIDate+Extensions.swift in Sources */,
 				52C17B65270B9AB100562893 /* AppDelegate.swift in Sources */,
 				52F3EC2527C6FF0700D7DC08 /* AppIconTableViewCell.swift in Sources */,
+				52F3EC4D27C84CA400D7DC08 /* SettingsViewController.swift in Sources */,
 				52F3EC2327C6F75C00D7DC08 /* AppIconsTableViewController.swift in Sources */,
 				52BB8251270BD11C00F261DB /* Cache.swift in Sources */,
 				52BB8254270BD26200F261DB /* Vice.swift in Sources */,
