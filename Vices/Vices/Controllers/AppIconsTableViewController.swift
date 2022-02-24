@@ -31,7 +31,7 @@ class AppIconsTableViewController: UITableViewController {
 
         let cell: AppIconTableViewCell = tableView.dequeueReusableCell(withIdentifier: "AppIconTableViewCell", for: indexPath) as! AppIconTableViewCell
         cell.configure(
-            iconImageName: icon.imageName,
+            iconImageName: icon.imageAssetName,
             title: icon.title,
             selected: selected == icon
         )
@@ -44,15 +44,16 @@ class AppIconsTableViewController: UITableViewController {
         guard let icon = Icons(rawValue: indexPath.row) else {
             preconditionFailure()
         }
+        guard old != icon else { return }
 
         switch icon {
         case .vices:
             UIApplication.shared.setAlternateIconName(nil)
         case .noé:
-            UIApplication.shared.setAlternateIconName("AppIcon-2")
+            UIApplication.shared.setAlternateIconName("Noe")
         }
 
-        // don't luv, should do diffabledatasource
+        // fine
         selected = icon
         tableView.reloadRows(
             at: [IndexPath(row: old.rawValue, section: 0), IndexPath(row: icon.rawValue, section: 0)],

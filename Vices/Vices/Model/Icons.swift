@@ -20,7 +20,7 @@ enum Icons: Int, CaseIterable {
         }
     }
 
-    var imageName: String {
+    var imageAssetName: String {
         switch self {
         case .vices:
             return "Icon-1"
@@ -31,7 +31,7 @@ enum Icons: Int, CaseIterable {
 
     init(name: String?) {
         switch name {
-        case "AppIcon-2":
+        case "Noe":
             self = .noé
         default:
             self = .vices
