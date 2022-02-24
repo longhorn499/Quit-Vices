@@ -12,12 +12,13 @@ struct UserReviews {
     private static let triggersReviewCount = 20
 
     static func incrementReviewActionCount(defaults: UserDefaults = .standard) {
-        let count = defaults.integer(forKey: key)
-        defaults.set(count + 1, forKey: key)
-        print(count + 1)
-        if count + 1 == triggersReviewCount {
+        var count = defaults.integer(forKey: key)
+        count += 1
+        if count == triggersReviewCount {
             requestReview()
             defaults.set(0, forKey: key)
+        } else {
+            defaults.set(count, forKey: key)
         }
     }
 
