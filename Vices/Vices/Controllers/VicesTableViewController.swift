@@ -1,54 +1,34 @@
 //
-//  VicesViewController.swift
+//  VicesTableViewController.swift
 //  Vices
 //
-//  Created by Kevin Johnson on 10/4/21.
+//  Created by Kevin Johnson on 2/24/22.
 //
 
 import UIKit
-import WidgetKit
 
-class VicesViewController: UIViewController {
-
+class VicesTableViewController: UITableViewController {
     enum Section {
         case main
     }
 
     // MARK: - Properties
 
-    private var models: [Vice] = {
-        if let v: [Vice] = try? Cache.read(path: "vices") {
-            return v
-        }
-        return []
-    }()
-
     private var editingIndex: IndexPath?
-
-    private lazy var dataSource = UITableViewDiffableDataSource<Section, Vice>(
-        tableView: self.tableView
-    ) { [weak self] tableView, indexPath, _ in
-        guard let `self` = self else {
-            return nil
-        }
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ViceTableViewCell", for: indexPath) as! ViceTableViewCell
-        cell.configure(vice: self.models[indexPath.row])
-        return cell
-    }
-
-    @IBOutlet weak var tableView: UITableView!
+    private lazy var dataSource = VicesTableViewDataSource(tableView: self.tableView)
 
     // MARK: - View Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        tableView.delegate = self
+        tableView.dataSource = dataSource
         tableView.estimatedRowHeight = 92
         tableView.rowHeight = UITableView.automaticDimension
         tableView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
-        
-        applySnapshot()
+        tableView.dragInteractionEnabled = true
+        tableView.dropDelegate = self
+
+        dataSource.applySnapshot()
 
         NotificationCenter.default.addObserver(
             self,
@@ -59,24 +39,6 @@ class VicesViewController: UIViewController {
     }
 
     // MARK: - Methods
-
-    func applySnapshot() {
-        var snapshot = NSDiffableDataSourceSnapshot<Section, Vice>()
-        snapshot.appendSections([.main])
-        snapshot.appendItems(models)
-        dataSource.apply(snapshot)
-    }
-
-    func saveVices() {
-        do {
-            let data = try Cache.save(models, path: "vices")
-            /// appgroup for sharing w/ widget, maybe silly to return data from Cache.save but it avoids doing same thing twice
-            try data.write(to: AppGroup.vices.containerURL.appendingPathComponent("vices"))
-            WidgetCenter.shared.reloadTimelines(ofKind: "VicesWidget")
-        } catch {
-            print("Error saving:", error)
-        }
-    }
 
     func presentSaveVice(vice: Vice?) {
         let create = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SaveViceViewController") as! SaveViceViewController
@@ -89,15 +51,15 @@ class VicesViewController: UIViewController {
         guard !isDuplicate(vice: vice) else {
             return
         }
-        models.append(vice)
-        applySnapshot()
-        saveVices()
+        dataSource.models.append(vice)
+        dataSource.applySnapshot()
+        dataSource.saveVices()
         UserReviews.incrementReviewActionCount()
     }
 
     func isDuplicate(vice: Vice) -> Bool {
         /// fine for now, duplicates cause a crash, could indicate in some way to user
-        guard !(models.contains { $0 == vice }) else {
+        guard !(dataSource.models.contains { $0 == vice }) else {
             return true
         }
         return false
@@ -129,22 +91,18 @@ class VicesViewController: UIViewController {
     // MARK: - Notifications
 
     @objc func willEnterForeground() {
-        var s = dataSource.snapshot()
-        s.reloadSections([.main])
-        ///  reload quitting date label (may not work w/ out diff?)
-        ///  just test
-        dataSource.apply(s, animatingDifferences: true)
+        dataSource.reloadSnapshot()
     }
 }
 
 // MARK: - UITableViewDelegate
 
-extension VicesViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+extension VicesTableViewController {
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let delete = UIContextualAction(style: .destructive, title: "Delete") { (_, _, completion) in
-            self.models.remove(at: indexPath.row)
-            self.applySnapshot()
-            self.saveVices()
+            self.dataSource.models.remove(at: indexPath.row)
+            self.dataSource.applySnapshot()
+            self.dataSource.saveVices()
             UserReviews.incrementReviewActionCount()
             completion(true)
         }
@@ -156,14 +114,14 @@ extension VicesViewController: UITableViewDelegate {
             title: "Reset"
         ) {  (_, _, completion) in
             let new = Vice(
-                name: self.models[indexPath.row].name,
+                name: self.dataSource.models[indexPath.row].name,
                 quittingDate: .todayMonthDayYear(),
-                reason: self.models[indexPath.row].reason
+                reason: self.dataSource.models[indexPath.row].reason
             )
             if !self.isDuplicate(vice: new) {
-                self.models[indexPath.row] = new
-                self.applySnapshot()
-                self.saveVices()
+                self.dataSource.models[indexPath.row] = new
+                self.dataSource.applySnapshot()
+                self.dataSource.saveVices()
                 UserReviews.incrementReviewActionCount()
             }
             completion(true)
@@ -172,15 +130,25 @@ extension VicesViewController: UITableViewDelegate {
         return UISwipeActionsConfiguration(actions: [delete, reset])
     }
 
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         editingIndex = indexPath
-        presentSaveVice(vice: models[indexPath.row])
+        presentSaveVice(vice: dataSource.models[indexPath.row])
     }
+}
+
+// MARK: - UITableViewDropDelegate
+
+extension VicesTableViewController: UITableViewDropDelegate {
+    func tableView(_ tableView: UITableView, dropSessionDidUpdate session: UIDropSession, withDestinationIndexPath destinationIndexPath: IndexPath?) -> UITableViewDropProposal {
+        return .init(operation: .move, intent: .insertAtDestinationIndexPath)
+    }
+
+    func tableView(_ tableView: UITableView, performDropWith coordinator: UITableViewDropCoordinator) { }
 }
 
 // MARK: CreateViceViewControllerDelegate
 
-extension VicesViewController: CreateViceViewControllerDelegate {
+extension VicesTableViewController: CreateViceViewControllerDelegate {
     func createViceViewController(_ vc: SaveViceViewController, didSave vice: Vice) {
         vc.dismiss(animated: true) { [weak self] in
             guard let this = self else {
@@ -188,10 +156,10 @@ extension VicesViewController: CreateViceViewControllerDelegate {
             }
             if this.editingIndex != nil {
                 /// dry - method for edit
-                if !(this.models.contains { $0 == vice }) {
-                    this.models[this.editingIndex!.row] = vice
-                    this.applySnapshot()
-                    this.saveVices()
+                if !(this.dataSource.models.contains { $0 == vice }) {
+                    this.dataSource.models[this.editingIndex!.row] = vice
+                    this.dataSource.applySnapshot()
+                    this.dataSource.saveVices()
                     UserReviews.incrementReviewActionCount()
                 }
                 this.editingIndex = nil

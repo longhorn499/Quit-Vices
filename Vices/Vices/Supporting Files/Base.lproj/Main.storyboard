@@ -18,7 +18,7 @@
                         <navigationBarAppearance key="standardAppearance"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="CJC-wT-7v6"/>
+                        <segue destination="mom-Nw-eas" kind="relationship" relationship="rootViewController" id="LiC-NV-ibi"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XaH-NN-5bu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -26,81 +26,73 @@
             <point key="canvasLocation" x="-829" y="116"/>
         </scene>
         <!--Quit Vices-->
-        <scene sceneID="tne-QT-ifu">
+        <scene sceneID="ikt-00-rBH">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="VicesViewController" customModule="Vices" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <tableViewController id="mom-Nw-eas" customClass="VicesTableViewController" customModule="Vices" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="ced-77-yQT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="fhy-WX-dPP">
-                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
-                                <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ViceTableViewCell" rowHeight="102" id="BUu-l8-7B5" customClass="ViceTableViewCell" customModule="Vices" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="32" width="374" height="102"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BUu-l8-7B5" id="BVl-1Y-qse">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="102"/>
-                                            <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ViceTableViewCell" rowHeight="102" id="ow0-pl-scz" customClass="ViceTableViewCell" customModule="Vices" customModuleProvider="target">
+                                <rect key="frame" x="20" y="32" width="374" height="102"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ow0-pl-scz" id="0f8-sp-ew6">
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="102"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ZD8-nI-9xI">
+                                            <rect key="frame" x="16" y="16" width="342" height="34"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="J9z-gn-ykm">
-                                                    <rect key="frame" x="16" y="16" width="342" height="34"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="JQc-8g-AhG">
+                                                    <rect key="frame" x="0.0" y="0.0" width="290.5" height="34"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="15V-tn-G1V">
-                                                            <rect key="frame" x="0.0" y="0.0" width="290.5" height="34"/>
-                                                            <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="1000" text="Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wcp-t6-Tkr">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="290.5" height="17"/>
-                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                                                    <nil key="textColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Reason" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hId-Rs-cdc" userLabel="Reason Label">
-                                                                    <rect key="frame" x="0.0" y="17" width="290.5" height="17"/>
-                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                                    <nil key="textColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                            </subviews>
-                                                        </stackView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="X days" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JoP-f2-44I">
-                                                            <rect key="frame" x="298.5" y="0.0" width="43.5" height="17"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="1000" text="Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RvP-Vk-dKr">
+                                                            <rect key="frame" x="0.0" y="0.0" width="290.5" height="17"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Reason" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="On5-SU-TLR" userLabel="Reason Label">
+                                                            <rect key="frame" x="0.0" y="17" width="290.5" height="17"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                 </stackView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="X days" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Mo-bu-7EL">
+                                                    <rect key="frame" x="298.5" y="0.0" width="43.5" height="17"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstItem="J9z-gn-ykm" firstAttribute="leading" secondItem="BVl-1Y-qse" secondAttribute="leading" constant="16" id="Gy7-lu-HzP"/>
-                                                <constraint firstAttribute="trailing" secondItem="J9z-gn-ykm" secondAttribute="trailing" constant="16" id="I6l-Ue-MR0"/>
-                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="J9z-gn-ykm" secondAttribute="bottom" priority="999" constant="16" id="xYw-Qg-07C"/>
-                                                <constraint firstItem="J9z-gn-ykm" firstAttribute="top" secondItem="BVl-1Y-qse" secondAttribute="top" constant="16" id="ySo-gt-yFL"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="containerStackView" destination="J9z-gn-ykm" id="W7I-Sa-jyF"/>
-                                            <outlet property="nameLabel" destination="Wcp-t6-Tkr" id="nGs-M7-PrU"/>
-                                            <outlet property="reasonLabel" destination="hId-Rs-cdc" id="RRM-E1-5HA"/>
-                                            <outlet property="timeLabel" destination="JoP-f2-44I" id="9gO-RO-mfH"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="fhy-WX-dPP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ATG-oE-5Wo"/>
-                            <constraint firstAttribute="bottom" secondItem="fhy-WX-dPP" secondAttribute="bottom" id="NKb-u7-Qed"/>
-                            <constraint firstAttribute="trailing" secondItem="fhy-WX-dPP" secondAttribute="trailing" id="oo1-0b-8bq"/>
-                            <constraint firstItem="fhy-WX-dPP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="sUv-l0-JlG"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Quit Vices" id="iFV-XI-0gg">
-                        <barButtonItem key="backBarButtonItem" title=" " id="DIh-9i-UIx"/>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="ZD8-nI-9xI" secondAttribute="trailing" constant="16" id="3Ii-cS-nIB"/>
+                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ZD8-nI-9xI" secondAttribute="bottom" priority="999" constant="16" id="PoV-Bg-MCJ"/>
+                                        <constraint firstItem="ZD8-nI-9xI" firstAttribute="leading" secondItem="0f8-sp-ew6" secondAttribute="leading" constant="16" id="j8H-Zc-T5X"/>
+                                        <constraint firstItem="ZD8-nI-9xI" firstAttribute="top" secondItem="0f8-sp-ew6" secondAttribute="top" constant="16" id="nif-Q8-eeT"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="containerStackView" destination="ZD8-nI-9xI" id="sBN-3B-BSt"/>
+                                    <outlet property="nameLabel" destination="RvP-Vk-dKr" id="50X-Qd-iUf"/>
+                                    <outlet property="reasonLabel" destination="On5-SU-TLR" id="hgl-sc-bah"/>
+                                    <outlet property="timeLabel" destination="1Mo-bu-7EL" id="ZGd-7c-xEb"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="mom-Nw-eas" id="hUP-z6-TN2"/>
+                            <outlet property="delegate" destination="mom-Nw-eas" id="pC6-Ug-nva"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Quit Vices" largeTitleDisplayMode="always" id="x3y-gR-PTb">
+                        <barButtonItem key="backBarButtonItem" title=" " id="2HX-7L-AHe"/>
                         <rightBarButtonItems>
                             <barButtonItem title="Item" image="gear" catalog="system" id="cOx-Kg-cqd">
                                 <color key="tintColor" systemColor="systemPurpleColor"/>
@@ -111,18 +103,16 @@
                             <barButtonItem systemItem="add" id="Nfn-YW-jY8">
                                 <color key="tintColor" systemColor="systemPurpleColor"/>
                                 <connections>
-                                    <action selector="didTapAddVice:" destination="BYZ-38-t0r" id="41R-Ib-9gZ"/>
+                                    <action selector="didTapAddVice:" destination="mom-Nw-eas" id="XVs-jS-VO8"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
-                    <connections>
-                        <outlet property="tableView" destination="fhy-WX-dPP" id="SbX-fs-1CK"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="imL-Py-S0l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131.8840579710145" y="115.84821428571428"/>
+            <point key="canvasLocation" x="80" y="116"/>
         </scene>
         <!--Save Vice View Controller-->
         <scene sceneID="RRo-QM-j6G">
@@ -254,7 +244,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="638-U3-AgX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1180" y="-206"/>
+            <point key="canvasLocation" x="1061" y="-212"/>
         </scene>
         <!--Settings-->
         <scene sceneID="xs2-h9-iKY">
@@ -328,7 +318,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p6b-5G-3l5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1180" y="486"/>
+            <point key="canvasLocation" x="1061" y="495"/>
         </scene>
         <!--App Icons-->
         <scene sceneID="Y8k-ta-JPG">
@@ -395,7 +385,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B3m-gy-h5K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2107" y="485"/>
+            <point key="canvasLocation" x="1884" y="495"/>
         </scene>
     </scenes>
     <resources>
