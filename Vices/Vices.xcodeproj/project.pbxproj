@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		52274A2227C84F04001D3FD1 /* VicesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52274A2127C84F04001D3FD1 /* VicesTableViewController.swift */; };
+		52274A2427C85506001D3FD1 /* VicesTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52274A2327C85506001D3FD1 /* VicesTableViewDataSource.swift */; };
 		5243FFE4270CFA8100AF8163 /* UIDate+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5243FFE3270CFA8100AF8163 /* UIDate+Extensions.swift */; };
 		5270BDD1276817C600FDA660 /* UserReviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5270BDD0276817C600FDA660 /* UserReviews.swift */; };
 		52AF7CA2270E71A600596E80 /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AF7CA1270E71A600596E80 /* Formatters.swift */; };
@@ -28,7 +30,6 @@
 		52BB8258270BDA7400F261DB /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BB8257270BDA7300F261DB /* UIFont+Extensions.swift */; };
 		52C17B65270B9AB100562893 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C17B64270B9AB100562893 /* AppDelegate.swift */; };
 		52C17B67270B9AB100562893 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C17B66270B9AB100562893 /* SceneDelegate.swift */; };
-		52C17B69270B9AB100562893 /* VicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C17B68270B9AB100562893 /* VicesViewController.swift */; };
 		52C17B6C270B9AB100562893 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52C17B6A270B9AB100562893 /* Main.storyboard */; };
 		52C17B6E270B9AB200562893 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52C17B6D270B9AB200562893 /* Assets.xcassets */; };
 		52C17B71270B9AB200562893 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52C17B6F270B9AB200562893 /* LaunchScreen.storyboard */; };
@@ -81,6 +82,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		52274A2127C84F04001D3FD1 /* VicesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VicesTableViewController.swift; sourceTree = "<group>"; };
+		52274A2327C85506001D3FD1 /* VicesTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VicesTableViewDataSource.swift; sourceTree = "<group>"; };
 		5243FFE3270CFA8100AF8163 /* UIDate+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDate+Extensions.swift"; sourceTree = "<group>"; };
 		5270BDD0276817C600FDA660 /* UserReviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserReviews.swift; sourceTree = "<group>"; };
 		52AF7CA1270E71A600596E80 /* Formatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
@@ -101,7 +104,6 @@
 		52C17B61270B9AB100562893 /* Vices.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vices.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52C17B64270B9AB100562893 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52C17B66270B9AB100562893 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		52C17B68270B9AB100562893 /* VicesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VicesViewController.swift; sourceTree = "<group>"; };
 		52C17B6B270B9AB100562893 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		52C17B6D270B9AB200562893 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52C17B70270B9AB200562893 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 			children = (
 				52F3EC2627C6FF1700D7DC08 /* Icons.swift */,
 				52BB8253270BD26200F261DB /* Vice.swift */,
+				52274A2327C85506001D3FD1 /* VicesTableViewDataSource.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -273,9 +276,9 @@
 			isa = PBXGroup;
 			children = (
 				52F3EC2227C6F75C00D7DC08 /* AppIconsTableViewController.swift */,
-				52F3EC4C27C84CA400D7DC08 /* SettingsViewController.swift */,
 				52BB824D270BCCFF00F261DB /* SaveViceViewController.swift */,
-				52C17B68270B9AB100562893 /* VicesViewController.swift */,
+				52F3EC4C27C84CA400D7DC08 /* SettingsViewController.swift */,
+				52274A2127C84F04001D3FD1 /* VicesTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -469,15 +472,16 @@
 				52F3EC2727C6FF1700D7DC08 /* Icons.swift in Sources */,
 				52C17B97270B9B5800562893 /* ViceTableViewCell.swift in Sources */,
 				52B56729270E4C7C00424327 /* VicesWidget.intentdefinition in Sources */,
-				52C17B69270B9AB100562893 /* VicesViewController.swift in Sources */,
 				5270BDD1276817C600FDA660 /* UserReviews.swift in Sources */,
 				52BB8258270BDA7400F261DB /* UIFont+Extensions.swift in Sources */,
 				52BB824E270BCCFF00F261DB /* SaveViceViewController.swift in Sources */,
 				5243FFE4270CFA8100AF8163 /* UIDate+Extensions.swift in Sources */,
+				52274A2427C85506001D3FD1 /* VicesTableViewDataSource.swift in Sources */,
 				52C17B65270B9AB100562893 /* AppDelegate.swift in Sources */,
 				52F3EC2527C6FF0700D7DC08 /* AppIconTableViewCell.swift in Sources */,
 				52F3EC4D27C84CA400D7DC08 /* SettingsViewController.swift in Sources */,
 				52F3EC2327C6F75C00D7DC08 /* AppIconsTableViewController.swift in Sources */,
+				52274A2227C84F04001D3FD1 /* VicesTableViewController.swift in Sources */,
 				52BB8251270BD11C00F261DB /* Cache.swift in Sources */,
 				52BB8254270BD26200F261DB /* Vice.swift in Sources */,
 				52C17B67270B9AB100562893 /* SceneDelegate.swift in Sources */,
@@ -723,7 +727,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = Vices/Vices.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = X6XFU66KA9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Vices/Supporting Files/Info.plist";
@@ -737,7 +741,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = vices.Vices;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -756,7 +760,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = Vices/Vices.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = X6XFU66KA9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Vices/Supporting Files/Info.plist";
@@ -770,7 +774,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = vices.Vices;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
