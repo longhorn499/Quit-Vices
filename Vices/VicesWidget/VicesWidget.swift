@@ -74,32 +74,39 @@ struct VicesEntry: TimelineEntry {
 
 struct VicesWidgetEntryView : View {
     var entry: Provider.Entry
-    let prefix: Int = 2
+    let prefix: Int = 3
 
     var body: some View {
-        if entry.vices.isEmpty {
-            Text("No Vices").bold()
-        } else {
-            VStack(alignment: .leading, spacing: 4.0) {
-                ForEach(entry.vices.prefix(prefix), id: \.self) { vice in
-                    Text("\(vice.name)").bold()
-                    Text("\(Formatters.quittingDay(vice.quittingDate))")
-                }
-                Spacer()
-                entry.vices.count > prefix ?
+        ZStack {
+            Color(.secondarySystemGroupedBackground)
+                .ignoresSafeArea()
+            if entry.vices.isEmpty {
+                Text("No Vices").bold()
+            } else {
+                VStack(alignment: .leading, spacing: 4.0) {
+                    ForEach(entry.vices.prefix(prefix), id: \.self) { vice in
+                        Text("\(vice.name)")
+                            .font(.caption)
+                            .bold()
+                        Text("\(Formatters.quittingDay(vice.quittingDate))")
+                            .font(.caption)
+                    }
+                    Spacer()
+                    entry.vices.count > prefix ?
                     Text("+\(entry.vices.count - entry.vices.prefix(prefix).count) more")
-                    .font(.callout): nil
-                Spacer()
+                        .font(.caption2): nil
+                    Spacer()
+                }
+                .frame(
+                    minWidth: 0,
+                    maxWidth: .infinity,
+                    minHeight: 0,
+                    maxHeight: .infinity,
+                    alignment: .topLeading
+                )
+                .padding(.horizontal)
+                .padding(.top)
             }
-            .frame(
-                minWidth: 0,
-                maxWidth: .infinity,
-                minHeight: 0,
-                maxHeight: .infinity,
-                alignment: .topLeading
-            )
-            .padding(.horizontal)
-            .padding(.top)
         }
     }
 }
@@ -129,7 +136,8 @@ struct VicesWidget_Previews: PreviewProvider {
                 date: Date.todayMonthDayYear(),
                 vices: [
                     .init(name: "Smoking", reason: nil),
-                    .init(name: "Drinking", reason: nil)
+                    .init(name: "Drinking", reason: nil),
+                    .init(name: "Test", reason: nil)
                 ],
                 configuration: ConfigurationIntent()
             )

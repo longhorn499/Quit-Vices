@@ -10,14 +10,11 @@ import UIKit
 class SettingsViewController: UITableViewController {
     @IBOutlet weak private var versionNumberLabel: UILabel!
 
-    // MARK: - View Lifecycle
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
         versionNumberLabel.text = Bundle.main.versionNumberString
     }
-
 }
 
 fileprivate extension Bundle {

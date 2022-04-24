@@ -22,7 +22,7 @@ class SaveViceViewController: UIViewController {
     @IBOutlet weak private var quittingDatePicker: UIDatePicker!
     @IBOutlet weak private var nameTextField: UITextField!
     @IBOutlet weak private var reasonTextField: UITextField!
-    @IBOutlet weak private var saveButton: UIButton!
+    @IBOutlet weak private var saveButton: SaveButton!
 
     // MARK: - View Lifecycle
 
@@ -57,8 +57,6 @@ class SaveViceViewController: UIViewController {
     @objc func nameChanged() {
         let empty = nameTextField.text?.isEmpty ?? true
         saveButton.isEnabled = !empty
-        /// animating this would look nice
-        saveButton.backgroundColor = empty ? UIColor.systemPurple.withAlphaComponent(0.5) : UIColor.systemPurple
     }
 
     // MARK: - IBAction
@@ -85,3 +83,52 @@ extension SaveViceViewController: UITextFieldDelegate {
         return true
     }
 }
+
+// MARK: - Button
+
+class SaveButton: UIButton {
+    let animationDuration = 0.1
+
+    override var isEnabled: Bool {
+        didSet {
+            UIView.animate(withDuration: 0.3) {
+                self.alpha = self.isEnabled ? 1.0 : 0.6
+            }
+        }
+    }
+
+    override var isHighlighted: Bool {
+        didSet {
+            if isHighlighted {
+                UIImpactFeedbackGenerator(style: .light).impactOccurred()
+                UIView.animate(
+                    withDuration: animationDuration,
+                    animations: {
+                        self.transform = CGAffineTransform(scaleX: 1.03, y: 1.03)
+                    }
+                )
+            } else {
+                UIView.animate(
+                    withDuration: animationDuration,
+                    animations: {
+                        self.transform = CGAffineTransform.identity
+                    }
+                )
+            }
+        }
+    }
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+
+        titleLabel?.font = UIFont.systemFont(
+            ofSize: 16,
+            weight: .bold
+        ).scaledFontforTextStyle(.body)
+        titleLabel?.adjustsFontForContentSizeCategory = true
+        backgroundColor = .systemPurple
+        setTitleColor(.white, for: .normal)
+        heightAnchor.constraint(greaterThanOrEqualToConstant: 48.0).isActive = true
+    }
+}
+

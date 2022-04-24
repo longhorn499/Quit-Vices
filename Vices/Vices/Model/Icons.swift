@@ -8,33 +8,33 @@
 import Foundation
 
 enum Icons: Int, CaseIterable {
-    case vices
     case noé
+    case vices
 
     var title: String {
         switch self {
-        case .vices:
-            return "Vices"
         case .noé:
             return "Noé"
+        case .vices:
+            return "Vices"
         }
     }
 
     var imageAssetName: String {
         switch self {
-        case .vices:
-            return "Icon-1"
         case .noé:
+            return "Icon-1"
+        case .vices:
             return "Icon-2"
         }
     }
 
     init(name: String?) {
         switch name {
-        case "Noe":
-            self = .noé
-        default:
+        case "Drawing":
             self = .vices
+        default:
+            self = .noé
         }
     }
 }

@@ -47,10 +47,10 @@ class AppIconsTableViewController: UITableViewController {
         guard old != icon else { return }
 
         switch icon {
-        case .vices:
-            UIApplication.shared.setAlternateIconName(nil)
         case .noé:
-            UIApplication.shared.setAlternateIconName("Noe")
+            UIApplication.shared.setAlternateIconName(nil)
+        case .vices:
+            UIApplication.shared.setAlternateIconName("Drawing")
         }
 
         // fine
